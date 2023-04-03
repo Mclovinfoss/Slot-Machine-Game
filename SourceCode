@@ -1,5 +1,48 @@
 import random
 
+# Define the possible symbols and their corresponding payouts
+symbols = ["cherry", "lemon", "orange", "plum", "bell", "bar", "seven"]
+payouts = {"cherry": 2, "lemon": 3, "orange": 4, "plum": 5, "bell": 10, "bar": 20, "seven": 50}
+
+# Define the initial balance and bet amount
+balance = 100
+bet = 10
+
+# Play the game until the player decides to quit or runs out of money
+while balance > 0:
+    # Get the player's bet and spin the reels
+    print("Current balance: $", balance)
+    bet = int(input("Enter your bet (minimum $10): "))
+    if bet < 10:
+        print("Minimum bet is $10. Try again.")
+        continue
+    if bet > balance:
+        print("Not enough funds. Try again.")
+        continue
+    
+    balance -= bet
+    reel1 = random.choice(symbols)
+    reel2 = random.choice(symbols)
+    reel3 = random.choice(symbols)
+    print(reel1, reel2, reel3)
+    
+    # Calculate the payout based on the symbols and bet amount
+    if reel1 == reel2 == reel3:
+        payout = payouts[reel1] * bet
+        print("Jackpot! You won $", payout)
+    elif reel1 == reel2 or reel2 == reel3 or reel1 == reel3:
+        payout = payouts[reel1] * bet // 2
+        print("Two of a kind! You won $", payout)
+    else:
+        print("Sorry, try again.")
+    
+    # Update the balance
+    balance += payout
+    
+print("Game over. You ran out of funds.")
+
+
+#If we went with the above source code I think lines 46-50 are unecessary
 x = random.randint(0,10)
 y = random.randint(0,10)
 z = random.randint(0,10)
