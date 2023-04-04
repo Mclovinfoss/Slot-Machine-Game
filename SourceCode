@@ -37,17 +37,7 @@ while balance > 0:
         print("Sorry, try again.")
     
     # Update the balance
-    balance += payout
+    # I changed the "balance += payout" to this since I was getting errors when running it
+    balance = balance + payout
     
 print("Game over. You ran out of funds.")
-
-
-#If we went with the above source code I think lines 46-53 are unecessary
-x = random.randint(0,10)
-y = random.randint(0,10)
-z = random.randint(0,10)
-
-print(x,y,z)
-
-if x and y and z == 7:
-    print("You win")
