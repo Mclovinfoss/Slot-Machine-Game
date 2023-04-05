@@ -6,7 +6,6 @@ payouts = {"cherry": 2, "lemon": 3, "orange": 4, "plum": 5, "bell": 10, "bar": 2
 
 # Define the initial balance and bet amount
 balance = 100
-bet = 10
 
 # Play the game until the player decides to quit or runs out of money
 while balance > 0:
