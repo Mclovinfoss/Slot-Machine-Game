@@ -34,10 +34,8 @@ while balance > 0:
         print("Two of a kind! You won $", payout)
     else:
         print("Sorry, try again.")
-        
-        #If you don't win anything, balance is subtracted by your bet ammount.
-        #added this and the balance was becoming more accurate.
-        balance = balance - bet
+        payout = 0
+      
     
     # Update the balance
     # I changed the "balance += payout" to this since I was getting errors when running it
